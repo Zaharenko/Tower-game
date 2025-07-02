@@ -393,12 +393,11 @@ class CameraModel {
   }
 
   syncPosition({ x, y, z }) {
-    const maxY = 100;
     gsap.to(this.instance.position, {
       ease: 'expo.out',
       duration: 1,
       x: this._initialPosition.x + x,
-      y: Math.min(this._initialPosition.y + y, maxY),
+      y: this._initialPosition.y + y,
       z: this._initialPosition.z + z,
     });
   }
